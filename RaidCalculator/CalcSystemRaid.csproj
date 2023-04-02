@@ -1,0 +1,1965 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F0512A6-7037-4DE3-AB95-DA650FE55114}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RaidCalculator</RootNamespace>
+    <AssemblyName>RaidCalculator</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hero.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tal1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tal2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tal3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lg11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3х3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\resistance-icon_png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\life-icon_png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\offensive-icon_png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\crit-rate-icon_png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\acc-icon_png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\deffence-icon_png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\crit-damage-icon_png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\speed-icon_png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Cruel-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Immortal-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Divine-Offense-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Divine-Critical-Rate-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Divine-Life-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Divine-Speed-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Lifesteal-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Destroy-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Retaliation-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Fury-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Curing-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Reflex-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Cursed-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Taunting-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Avenging-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Daze-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Frenzy-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Regeneration-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Stalwart-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Savage-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Stun-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Relentless-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Immunity-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Shield-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Toxic-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ico\adv-Frost-icon.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kaimer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg41.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\artem-priakhin-ice-golem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drexstar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\izlimor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kandrafon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mortu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shazar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Krutraxa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lilith.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Initve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lemur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lutopes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Malbransh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Markis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Markisa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nazana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paidma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skverna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tanix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tortura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vizia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yamnyipes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zerber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Baronessa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diavolisa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dushegub.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Erinia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gubitel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ifrit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inferno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inkub.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adskiypes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Soul.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Strength.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dark.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Magic.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kilian.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\komandir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kondoter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Legioner.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lougan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Luchniza.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Marshal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mechnik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minaya.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mirmidonez.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Molvshiza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ognenniyklinok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pikiner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prisyajnik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ratnik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ratoborez.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Raylin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Razboynik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rihtoff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Roana.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Savoevatel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Septimus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setalia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shebalie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shemfort.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sineshal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skvair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sohatiy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toporshik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Valeri.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zashitnisa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alebardshik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arbaletchik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avangard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Azur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Baron.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bombardir.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CherniyRyzar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duelyant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frontovik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grandmaster.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hordin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kamerger.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Katafract.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elein.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elenaril.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ElitniyGvardeez.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Girea.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Itos.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lekar.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lissandra.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lusia.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Magistr.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mstitelniza.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Perezvon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prinzessa.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rapira.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shirimayna.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sokolnichiy.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Strajnica.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StrajnicaMoshey.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stravnica.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tairel.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tennasil.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vedunia.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vergis.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yannika.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zakonniza.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zlatostrel.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adamant.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arbitr.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aristokrat.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Basilevs.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Belanor.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eger.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BoevayaJrica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bushi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Canoness.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cardinal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chaplain.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cupidus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DevaBitvy.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Errol.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ethel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fenax.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Honec.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hope.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hospitaller.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hramovnick.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Igumeniya.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ioman.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ispovednica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Juliana.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Justiciar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Klirick.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kneht.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lady_Etessa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lamellar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lightsworn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mechenosec.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mironosica.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Missionary.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MonaxIsgoy.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nikolas.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orugenosec.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pastor.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Piligrim.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Poslushnik.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Povstanec.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prepodobnaya.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Psalmist.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Relickvar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Romero.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Roshcard_the_Tower.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saracin.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Serjant.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SistraBitvy.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skaut.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Snegocvet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Svidetel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tallia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Venera.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vershitel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abbatisa.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aothar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BelayaDeva.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adriel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlemenaOgrinov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\renegate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reptiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Varvaras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\werewolves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dwarves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\darkelves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\demons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Highelves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orcs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chujezemec.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dezertir.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dikar.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DobitchicaSkalpov.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Etun.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gromila.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hatun.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kantra.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kellia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kochevnica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LazurnayaLedi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Legit.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maiv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MastericaLukov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mecheniy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medium.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NebesnayaCharovnica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nomada.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Obryadchica.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ordinec.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Razvedchik.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schitonosec.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sikara.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SkilaOkr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skitalica.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stareishina.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Suvaya.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teshada.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Turvold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Valkiria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Valla.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Voitelnica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vsadnica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yazichnica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zlobostrel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zveroboy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aina.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alika.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Altan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Atur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Berserk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buivol.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gul_reindjer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hexia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hromonog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Husk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iskusitel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jnivec.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kadavr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Karam.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KorolGraal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KostyanoiRicar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Krovopiica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LedyanayaBanshi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lich.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lovec.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaShalled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mavzoleinik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MertviiMechenosec.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nechestivica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NechestiviiPes.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nethril.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Netopir.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PadshiiVoin.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrizrachnayaUbiica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pustotel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rotos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Siphi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skartorsis.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skelet.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SobiratelTrupov.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sovetnik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Strelok.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Suzerain_Katonn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TemnayaElein.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TemnayaEtel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vedma.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VosstavshayaGonchaya.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VosstavshiiRicar.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vulpin.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zelot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nemosch.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amarant.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bad_el_Kazar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banshee.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dampir.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnilomag.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gorgorab.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Greshnik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gul.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GorniiKorol.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gornyak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Himik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kamnetes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Karaulnii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KuznecBoli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MasterTopora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MolliKelner.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pehotinec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reznik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SerjantArergarda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmotritelRun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StarshiiZaboischik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Svarlivec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tesak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tormin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trunda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Val.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yarl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Baerdal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bezumec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Borec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Burav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Deboshir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gala.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anker.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brakus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dlinnoborod.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hakkorn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Horonar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Krovorog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Matador.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Norog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pogromschik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Potroshitel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Razdiratel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Satir.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sedoborod.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skotoboec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StalnoiCherep.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Telec.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tolstorog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upryajnik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UrsinNerushimii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UrsinSnegostup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vitorog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Voevoda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yago.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zaklinatel.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\СB.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jivoglot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kaiman.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Krisk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Metatel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ozernik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Raptor.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Razen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salamandra.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scink.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sekach.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slizen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Triton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Troglodit.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Var_Gall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Varan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vasilisk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bolotnik.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Djarang.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Djareg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Djizoh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drakomorf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dreik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fu_Shan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Garuspik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gator.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JelezniiYascher.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jivoder.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nekrolov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Palach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RazoritelMogil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Renegatka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sinesha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sklepnica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Storoj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Straholyud.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TemnayaKoldunya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teurg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vencenosnaya.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZolotayaJnica.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Akolit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bessmertnaya.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bezdushnii.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bezlicii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bistofus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Centurion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charodeika.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Despot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DnevnoiHodok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fatalist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gegemon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gerold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gladiator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HozyainGrobnic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Izuver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kaitis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KaraulnayaSklepa.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KnyazVurlim.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KrovavayaUbiica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kultist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cherepolom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chernolob.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Galkut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Geval.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GrashMolotoboi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gratolom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gurgot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GurptukBorodach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ignatius.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kamneshkur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kostolom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lyudoed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Macheha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Magmovik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Moroznik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Myasnik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ogr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OkkultniiVoin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Onagr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pustobryuh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Revoglas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shemrok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skalozub.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Starovlas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stopolom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tolkach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tyuremschik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yarosten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bashennik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BolshoiUn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Astralit.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BagrovayaMaska.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CaricaEva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Derjatel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Foli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HolodnoeSerdce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HozyaikaDush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Igla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iskatel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jalo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kael.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KapitanTemila.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KnyazNochi.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kosa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Krestovik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lanakis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Luriya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MadamSerris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mistik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Muchenica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ohranitel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paragon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reindjer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sailar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Samodiva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sledopit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Snaiper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StalnayaTetiva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Strannik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UbiicaMagov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VisiksaNepokornaya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VisshiiSudya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VizirOvelis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vorojeya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yasnovidyaschaya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zaviya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arahnid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZverUjasa.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adept.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ataman.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drevorub.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Galek.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Golovorez.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grogak.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hangar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KrovavoePero.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Latnik.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Muchitel.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Naletchica.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ohotnica.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PevchiiSmerti.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prorochica.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PustinnayaRazboinica.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Robar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rubaka.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shamanka.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shipogolovii.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\storojevoiVarg.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tila.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Totemnica.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trofeischica.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vandal.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VelikiiGalek.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Veteran.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Voyaka.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vrask.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zagonschica.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zargala.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Krila.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drokgul.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Saito.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Отражение.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Парирование.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Расторопность.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Живучесть.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Solaris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StrazhSvyatyh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tuhak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ursuga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Utoplennik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Velmoja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vergumkaar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dilgol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dityatmy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dolor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Draconis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fein.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gloril.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HozyajkaDyun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kaiden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kvestor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lutozver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Purgator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GrozaVelikanov.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VoennyhDelMaster.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BezuprechnoeIspolnenie.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\krushitelcherepov.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CentrVnimaniya.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GlazAlmaz.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GlotokJizni.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JestkiyUdar.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KrovaviySHchit.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KrovSMolokom.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KrugovorotYarosti.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MestPavshih.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MetodichnayaAtaka.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MrachniyIshod.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NosPoVetru.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RokovoyKuraj.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shchitolom.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmertelniyVihr.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SvirepiyOtpor.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VoVseTyajkie.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZahvatVRasploh.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdeptKlinka.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Uporstvo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upryamstvo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zakalka.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZerkalnoeIscelenie.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edinstvo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EffecnoeOtrajenie.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnet.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GotovnostKJertve.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HolodnayaMest.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IsskustvoVoiny.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JajdaSmerty.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JestokayaJatva.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KamennayaKoja.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OdinZaVseh.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Omolojenie.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Otplata.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OtsrochkaSmerty.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Protivlenie.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShagNaperekor.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spokoystvie.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StalnayaKoja.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Strashchanie.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shchitonosec.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SkorayaReakciya.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spasitel.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tiraniya.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upornost.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VelichieSmerty.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VolshebniyVihr.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlagodatnayaPomoshch.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BoevieChary.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boykost.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DurnoyGlaz.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EliksirJizni.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fiksaciya.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\focus.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IgranaRuku.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IscelyaushchayaDlan.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrliniyGlas.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PodmogaVprok.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PodnyatieDuha.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Provorstvo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RokovoyPricel.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SnaiperSUP.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elegius.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KroshkaEnni.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LidiyaVosstavshaya.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Manyak.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Narma.PNG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
